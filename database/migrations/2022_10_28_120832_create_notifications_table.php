@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('notifications', function (Blueprint $table) {
+            $table->id('notificationId');
+            $table->string('notificationMessage')->nullable();
+            $table->string('notificationColor')->nullable();
+            $table->string('notificationCustomerType')->nullable();
+            //  foreign key for customerId
+            $table->foreignId("notificationCustomerId")
+                ->constrained('customers', 'customerId')
+                ->onDelete('cascade');
+            $table->string('notificationTittle')->nullable();
+            $table->string('notificationStatus')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('notifications');
+    }
+};

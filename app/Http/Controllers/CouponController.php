@@ -7,13 +7,8 @@ use App\Http\Requests\Coupon\DeleteCouponRequest;
 use App\Http\Requests\Coupon\ReadByCouponCodeRequest;
 use App\Http\Requests\Coupon\ReadByCouponIdRequest;
 use App\Http\Requests\Coupon\UpdateCouponRequest;
-use App\Http\Requests\Coupon\ReadByIdRequest;
-use App\Http\Service\couponService;
-use App\Models\Coupon;
+use App\Http\Service\CouponService;
 use App\Util\baseUtil\ResponseUtil;
-use App\Util\exceptionUtil\ExceptionCase;
-use App\Util\exceptionUtil\ExceptionUtil;
-use Exception;
 use Illuminate\Http\JsonResponse;
 
 class CouponController extends Controller
@@ -21,7 +16,7 @@ class CouponController extends Controller
     use ResponseUtil;
 
     public function __construct(protected CouponService $couponService){
-        $this->couponService = $couponService;
+        //todo code here
     }
 
 

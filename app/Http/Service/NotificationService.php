@@ -2,11 +2,9 @@
 
 namespace App\Http\Service;
 
-use App\Http\Requests\Authentication\InitiateEnrollmentRequest;
-use App\Http\Requests\Notification\ReadByIdRequest;
+use App\Http\Requests\Notification\ReadByNotificationIdRequest;
 use App\Http\Requests\Notification\ReadByCustomerTypeRequest;
 use App\Http\Requests\Testimony\CreateNotificationRequest;
-use App\Mail\OtpMail;
 use App\Models\Customer;
 use App\Models\Notification;
 use App\Util\baseUtil\ResponseUtil;
@@ -14,8 +12,6 @@ use App\Util\exceptionUtil\ExceptionCase;
 use App\Util\exceptionUtil\ExceptionUtil;
 use Exception;
 use \Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Mail;
-use function MongoDB\BSON\toJSON;
 
 
 class NotificationService
@@ -59,7 +55,7 @@ class NotificationService
 
     }
 
-    public function readById(ReadByIdRequest $request): JsonResponse
+    public function readById(ReadByNotificationIdRequest $request): JsonResponse
     {
         try {
             //  validation

@@ -15,12 +15,9 @@ use Illuminate\Http\JsonResponse;
 
 class AuthenticationsController extends Controller
 {
-    protected CustomerService $customerService;
-    protected AuthenticationService $authenticationService;
 
-    public function __construct(CustomerService $customerService,AuthenticationService $authenticationService){
-        $this->customerService = $customerService;
-        $this->authenticationService = $authenticationService;
+    public function __construct(protected CustomerService $customerService,protected AuthenticationService $authenticationService){
+        //todo code here
     }
 
     public function initiateEnrollment(InitiateEnrollmentRequest $request): JsonResponse

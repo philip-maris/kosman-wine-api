@@ -2,9 +2,8 @@
 
 namespace App\Http\Service;
 
-use App\Http\Requests\Authentication\InitiateEnrollmentRequest;
-use App\Http\Requests\Review\CreateSubscriptionRequest;
-use App\Http\Requests\Review\ReadByIdRequest;
+use App\Http\Requests\Review\CreateReviewRequest;
+use App\Http\Requests\Review\ReadByReviewIdRequest;
 use App\Http\Requests\Review\ReadSubscriptionByCustomerIdRequest;
 use App\Models\Product;
 use App\Models\Review;
@@ -14,8 +13,6 @@ use App\Util\exceptionUtil\ExceptionCase;
 use App\Util\exceptionUtil\ExceptionUtil;
 use Exception;
 use \Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Mail;
-use function MongoDB\BSON\toJSON;
 
 
 class ReviewService
@@ -23,7 +20,7 @@ class ReviewService
     use ResponseUtil;
     use NotificationUtil;
 
-    public function create(CreateSubscriptionRequest $request): JsonResponse
+    public function create(CreateReviewRequest $request): JsonResponse
     {
         try {
 
@@ -54,7 +51,7 @@ class ReviewService
 
     }
 
-    public function readById(ReadByIdRequest $request): JsonResponse
+    public function readById(ReadByReviewIdRequest $request): JsonResponse
     {
         try {
             //todo validation

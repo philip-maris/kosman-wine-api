@@ -4,13 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Banner\CreateBannerRequest;
 use App\Http\Requests\Banner\UpdateBannerRequest;
-use App\Http\Requests\Banner\ReadByIdRequest;
-use App\Http\Service\bannerService;
-use App\Models\Banner;
+use App\Http\Requests\Banner\ReadByBannerIdRequest;
+use App\Http\Service\BannerService;
 use App\Util\baseUtil\ResponseUtil;
-use App\Util\exceptionUtil\ExceptionCase;
-use App\Util\exceptionUtil\ExceptionUtil;
-use Exception;
 use Illuminate\Http\JsonResponse;
 
 class BannerController extends Controller
@@ -18,7 +14,7 @@ class BannerController extends Controller
     use ResponseUtil;
 
     public function __construct(protected BannerService $bannerService){
-        $this->bannerService = $bannerService;
+        //todo code here
     }
 
 
@@ -40,7 +36,7 @@ class BannerController extends Controller
         return $this->bannerService->read();
     }
 
-    public function readById(ReadByIdRequest $request): JsonResponse
+    public function readById(ReadByBannerIdRequest $request): JsonResponse
     {
        return $this->bannerService->readById($request);
     }

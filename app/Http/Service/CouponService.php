@@ -2,17 +2,13 @@
 
 namespace App\Http\Service;
 
-use App\Http\Requests\Authentication\InitiateEnrollmentRequest;
 use App\Http\Requests\Coupon\CreateCouponRequest;
 use App\Http\Requests\Coupon\DeleteCouponRequest;
 use App\Http\Requests\Coupon\ReadByCouponCodeRequest;
 use App\Http\Requests\Coupon\ReadByCouponIdRequest;
-use App\Http\Requests\Coupon\ReadByIdRequest;
 use App\Http\Requests\Coupon\UpdateCouponRequest;
-use App\Mail\OtpMail;
 use App\Models\Customer;
 use App\Models\Coupon;
-use App\Models\Notification;
 use App\Util\baseUtil\IdVerificationUtil;
 use App\Util\baseUtil\NotificationUtil;
 use App\Util\baseUtil\RandomUtil;
@@ -21,8 +17,6 @@ use App\Util\exceptionUtil\ExceptionCase;
 use App\Util\exceptionUtil\ExceptionUtil;
 use Exception;
 use \Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Mail;
-use function MongoDB\BSON\toJSON;
 
 
 class CouponService

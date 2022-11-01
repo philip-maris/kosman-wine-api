@@ -5,12 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Cart\CreateCartRequest;
 use App\Http\Requests\Cart\ReadByCustomerIdRequest;
 use App\Http\Requests\Cart\UpdateCartRequest;
-use App\Http\Requests\Cart\ReadByIdCartRequest;
-use App\Http\Service\cartService;
+use App\Http\Requests\Cart\ReadByCartIdRequest;
+use App\Http\Service\CartService;
 use App\Util\baseUtil\ResponseUtil;
-use App\Util\exceptionUtil\ExceptionCase;
-use App\Util\exceptionUtil\ExceptionUtil;
-use Exception;
 use Illuminate\Http\JsonResponse;
 
 class CartController extends Controller
@@ -18,7 +15,7 @@ class CartController extends Controller
     use ResponseUtil;
 
     public function __construct(protected CartService $cartService){
-        $this->cartService = $cartService;
+        //todo code here
     }
 
     public function create(CreateCartRequest $request): JsonResponse
@@ -42,7 +39,7 @@ class CartController extends Controller
        return $this->cartService->readByCustomerId($request);
     }
 
-    public function delete(ReadByIdCartRequest $request): JsonResponse
+    public function delete(ReadByCartIdRequest $request): JsonResponse
     {
        return $this->cartService->delete($request);
     }

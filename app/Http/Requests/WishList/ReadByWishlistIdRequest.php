@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Customer;
+namespace App\Http\Requests\WishList;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ReadByIdCustomerRequest extends FormRequest
+class ReadByWishlistIdRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,8 @@ class ReadByIdCustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            'customerId'=>['required'],
+            'wishlistId'=>['required'],
         ];
     }
+
 }

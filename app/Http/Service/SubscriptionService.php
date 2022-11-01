@@ -2,14 +2,10 @@
 
 namespace App\Http\Service;
 
-use App\Http\Requests\Authentication\InitiateEnrollmentRequest;
 use App\Http\Requests\Subscription\CreateSubscriptionRequest;
-use App\Http\Requests\Subscription\ReadByIdRequest;
-use App\Http\Requests\Subscription\UpdateSubscriptionRequest;
-use App\Mail\OtpMail;
+use App\Http\Requests\Subscription\ReadBySubscriptionIdRequest;
 use App\Models\Customer;
 use App\Models\Subscription;
-use App\Models\Notification;
 use App\Util\baseUtil\IdVerificationUtil;
 use App\Util\baseUtil\ResponseUtil;
 use App\Util\baseUtil\NotificationUtil;
@@ -17,8 +13,6 @@ use App\Util\exceptionUtil\ExceptionCase;
 use App\Util\exceptionUtil\ExceptionUtil;
 use Exception;
 use \Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Mail;
-use function MongoDB\BSON\toJSON;
 
 
 class SubscriptionService
@@ -65,7 +59,7 @@ class SubscriptionService
 
     }
 
-    public function readById(ReadByIdRequest $request): JsonResponse
+    public function readById(ReadBySubscriptionIdRequest $request): JsonResponse
     {
         try {
             //todo validation

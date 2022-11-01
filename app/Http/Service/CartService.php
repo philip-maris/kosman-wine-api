@@ -2,10 +2,9 @@
 
 namespace App\Http\Service;
 
-use App\Http\Requests\Authentication\InitiateEnrollmentRequest;
 use App\Http\Requests\Cart\CreateCartRequest;
 use App\Http\Requests\Cart\ReadByCustomerIdRequest;
-use App\Http\Requests\Cart\ReadByIdCartRequest;
+use App\Http\Requests\Cart\ReadByCartIdRequest;
 use App\Http\Requests\Cart\UpdateCartRequest;
 use App\Models\Cart;
 use App\Models\Product;
@@ -14,7 +13,6 @@ use App\Util\exceptionUtil\ExceptionCase;
 use App\Util\exceptionUtil\ExceptionUtil;
 use Exception;
 use \Illuminate\Http\JsonResponse;
-use function MongoDB\BSON\toJSON;
 
 
 class CartService
@@ -110,7 +108,7 @@ class CartService
 
 
 
-    public function delete(ReadByIdCartRequest $request): JsonResponse
+    public function delete(ReadByCartIdRequest $request): JsonResponse
     {
         try {
             //TODO VALIDATION

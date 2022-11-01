@@ -2,12 +2,9 @@
 
 namespace App\Http\Service;
 
-use App\Http\Requests\Authentication\InitiateEnrollmentRequest;
 use App\Http\Requests\Delivery\CreateDeliveryRequest;
-use App\Http\Requests\Delivery\ReadByIdDeliveryRequest;
+use App\Http\Requests\Delivery\ReadByDeliveryIdRequest;
 use App\Http\Requests\Delivery\UpdateDeliveryRequest;
-use App\Mail\OtpMail;
-use App\Models\Customer;
 use App\Models\Delivery;
 use App\Util\baseUtil\IdVerificationUtil;
 use App\Util\baseUtil\NotificationUtil;
@@ -16,8 +13,6 @@ use App\Util\exceptionUtil\ExceptionCase;
 use App\Util\exceptionUtil\ExceptionUtil;
 use Exception;
 use \Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Mail;
-use function MongoDB\BSON\toJSON;
 
 
 class DeliveryService
@@ -105,7 +100,7 @@ class DeliveryService
 
     }
 
-    public function readById(ReadByIdDeliveryRequest $request): JsonResponse
+    public function readById(ReadByDeliveryIdRequest $request): JsonResponse
     {
         try {
             //todo validation

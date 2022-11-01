@@ -3,14 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Transaction\CreateTransactionRequest;
-use App\Http\Requests\Transaction\UpdateTransactionRequest;
-use App\Http\Requests\Transaction\ReadByIdRequest;
-use App\Http\Service\transactionService;
-use App\Models\Transaction;
+use App\Http\Requests\Transaction\ReadByTransactionIdRequest;
+use App\Http\Service\TransactionService;
 use App\Util\baseUtil\ResponseUtil;
-use App\Util\exceptionUtil\ExceptionCase;
-use App\Util\exceptionUtil\ExceptionUtil;
-use Exception;
 use Illuminate\Http\JsonResponse;
 
 class TransactionController extends Controller
@@ -18,7 +13,7 @@ class TransactionController extends Controller
     use ResponseUtil;
 
     public function __construct(protected TransactionService $transactionService){
-        $this->transactionService = $transactionService;
+        //todo code here
     }
 
 
@@ -33,7 +28,7 @@ class TransactionController extends Controller
         return $this->transactionService->read();
     }
 
-    public function readById(ReadByIdRequest $request): JsonResponse
+    public function readById(ReadByTransactionIdRequest $request): JsonResponse
     {
        return $this->transactionService->readById($request);
     }

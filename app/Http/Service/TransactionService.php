@@ -2,11 +2,8 @@
 
 namespace App\Http\Service;
 
-use App\Http\Requests\Authentication\InitiateEnrollmentRequest;
 use App\Http\Requests\Transaction\CreateTransactionRequest;
-use App\Http\Requests\Transaction\ReadByIdRequest;
-use App\Http\Requests\Transaction\UpdateTransactionRequest;
-use App\Mail\OtpMail;
+use App\Http\Requests\Transaction\ReadByTransactionIdRequest;
 use App\Models\Customer;
 use App\Models\Transaction;
 use App\Util\baseUtil\ResponseUtil;
@@ -14,8 +11,6 @@ use App\Util\exceptionUtil\ExceptionCase;
 use App\Util\exceptionUtil\ExceptionUtil;
 use Exception;
 use \Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Mail;
-use function MongoDB\BSON\toJSON;
 
 
 class TransactionService
@@ -56,7 +51,7 @@ class TransactionService
 
     }
 
-    public function readById(ReadByIdRequest $request): JsonResponse
+    public function readById(ReadByTransactionIdRequest $request): JsonResponse
     {
         try {
             //todo validation

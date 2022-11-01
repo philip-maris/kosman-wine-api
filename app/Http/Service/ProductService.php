@@ -3,11 +3,10 @@
 namespace App\Http\Service;
 
 use App\Http\Requests\Product\CreateProductRequest;
-use App\Http\Requests\Product\ReadByIdProductRequest;
+use App\Http\Requests\Product\ReadByProductIdRequest;
 use App\Http\Requests\Product\UpdateProductRequest;
 use App\Models\Brand;
 use App\Models\Category;
-use App\Models\Customer;
 use App\Models\Product;
 use App\Util\baseUtil\IdVerificationUtil;
 use App\Util\baseUtil\NotificationUtil;
@@ -17,7 +16,6 @@ use App\Util\exceptionUtil\ExceptionUtil;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\URL;
-use function GuzzleHttp\Promise\all;
 
 class ProductService
 {
@@ -99,7 +97,7 @@ class ProductService
         }
     }
 
-    public function readById(ReadByIdProductRequest $request): JsonResponse
+    public function readById(ReadByProductIdRequest $request): JsonResponse
     {
         try {
             //TODO VALIDATION
@@ -113,7 +111,7 @@ class ProductService
         }
     }
 
-    public function delete(ReadByIdProductRequest $request){
+    public function delete(ReadByProductIdRequest $request){
         try {
             //TODO VALIDATION
             $request->validated($request->all());

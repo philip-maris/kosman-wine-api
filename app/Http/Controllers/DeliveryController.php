@@ -4,13 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Delivery\CreateDeliveryRequest;
 use App\Http\Requests\Delivery\UpdateDeliveryRequest;
-use App\Http\Requests\Delivery\ReadByIdDeliveryRequest;
-use App\Http\Service\deliveryService;
-use App\Models\Delivery;
+use App\Http\Requests\Delivery\ReadByDeliveryIdRequest;
+use App\Http\Service\DeliveryService;
 use App\Util\baseUtil\ResponseUtil;
-use App\Util\exceptionUtil\ExceptionCase;
-use App\Util\exceptionUtil\ExceptionUtil;
-use Exception;
 use Illuminate\Http\JsonResponse;
 
 class DeliveryController extends Controller
@@ -18,7 +14,7 @@ class DeliveryController extends Controller
     use ResponseUtil;
 
     public function __construct(protected DeliveryService $deliveryService){
-        $this->deliveryService = $deliveryService;
+        //todo code here
     }
 
 
@@ -40,7 +36,7 @@ class DeliveryController extends Controller
         return $this->deliveryService->read();
     }
 
-    public function readById(ReadByIdDeliveryRequest $request): JsonResponse
+    public function readById(ReadByDeliveryIdRequest $request): JsonResponse
     {
        return $this->deliveryService->readById($request);
     }

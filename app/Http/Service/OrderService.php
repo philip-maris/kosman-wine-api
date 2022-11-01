@@ -2,12 +2,10 @@
 
 namespace App\Http\Service;
 
-use App\Http\Requests\Authentication\InitiateEnrollmentRequest;
 use App\Http\Requests\Order\CreateOrderRequest;
-use App\Http\Requests\Order\ReadByIdOrderRequest;
+use App\Http\Requests\Order\ReadByOrderIdRequest;
 use App\Http\Requests\Order\UpdateOrderRequest;
 use App\Mail\OrderSuccessfulMail;
-use App\Mail\OtpMail;
 use App\Models\Customer;
 use App\Models\Delivery;
 use App\Models\Order;
@@ -19,7 +17,6 @@ use App\Util\exceptionUtil\ExceptionUtil;
 use Exception;
 use \Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Mail;
-use function MongoDB\BSON\toJSON;
 
 
 class OrderService
@@ -100,7 +97,7 @@ class OrderService
 
     }
 
-    public function readById(ReadByIdOrderRequest $request): JsonResponse
+    public function readById(ReadByOrderIdRequest $request): JsonResponse
     {
         try {
             //todo validation

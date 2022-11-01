@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Notification;
+namespace App\Http\Requests\Banner;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ReadByIdRequest extends FormRequest
+class ReadByBannerIdRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class ReadByIdRequest extends FormRequest
     public function rules()
     {
         return [
-            'notificationId'=>['required'],
+            'bannerId'=>['required'],
         ];
     }
 }

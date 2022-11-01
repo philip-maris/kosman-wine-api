@@ -3,14 +3,9 @@
 namespace App\Http\Service;
 
 use App\Http\Requests\Brand\CreateBrandRequest;
-use App\Http\Requests\Brand\ReadByIdBrandRequest;
+use App\Http\Requests\Brand\ReadByBrandIdRequest;
 use App\Http\Requests\Brand\UpdateBrandRequest;
-use App\Http\Requests\Category\CreateCategoryRequest;
-use App\Http\Requests\Category\ReadByIdCategoryRequest;
-use App\Http\Requests\Category\UpdateCategoryRequest;
 use App\Models\Brand;
-use App\Models\Category;
-use App\Models\Customer;
 use App\Util\baseUtil\IdVerificationUtil;
 use App\Util\baseUtil\NotificationUtil;
 use App\Util\baseUtil\ResponseUtil;
@@ -85,7 +80,7 @@ class BrandService
         }
     }
 
-    public function readById(ReadByIdBrandRequest $request): JsonResponse
+    public function readById(ReadByBrandIdRequest $request): JsonResponse
     {
         try {
             //TODO VALIDATION
@@ -99,7 +94,7 @@ class BrandService
         }
     }
 
-    public function delete(ReadByIdBrandRequest $request): JsonResponse
+    public function delete(ReadByBrandIdRequest $request): JsonResponse
     {
         try {
             //TODO VALIDATION

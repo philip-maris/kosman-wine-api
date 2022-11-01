@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Review\CreateSubscriptionRequest;
+use App\Http\Requests\Review\CreateReviewRequest;
 use App\Http\Requests\Review\ReadSubscriptionByCustomerIdRequest;
-use App\Http\Requests\Review\UpdateReviewRequest;
-use App\Http\Requests\Review\ReadByIdRequest;
-use App\Http\Service\reviewService;
-use App\Models\Review;
+use App\Http\Requests\Review\ReadByReviewIdRequest;
+use App\Http\Service\ReviewService;
 use App\Util\baseUtil\ResponseUtil;
-use App\Util\exceptionUtil\ExceptionCase;
-use App\Util\exceptionUtil\ExceptionUtil;
-use Exception;
 use Illuminate\Http\JsonResponse;
 
 class ReviewController extends Controller
@@ -19,11 +14,11 @@ class ReviewController extends Controller
     use ResponseUtil;
 
     public function __construct(protected ReviewService $reviewService){
-        $this->reviewService = $reviewService;
+        //todo code
     }
 
 
-    public function create(CreateSubscriptionRequest $request): JsonResponse
+    public function create(CreateReviewRequest $request): JsonResponse
     {
       return  $this->reviewService->create($request);
     }
@@ -33,7 +28,7 @@ class ReviewController extends Controller
         return $this->reviewService->read();
     }
 
-    public function readById(ReadByIdRequest $request): JsonResponse
+    public function readById(ReadByReviewIdRequest $request): JsonResponse
     {
        return $this->reviewService->readById($request);
     }

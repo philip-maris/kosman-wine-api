@@ -19,6 +19,7 @@ return new class extends Migration
                 ->constrained('customers', 'customerId')
                 ->onDelete('cascade');
             $table->string('transactionAmount')->nullable();
+            $table->string('transactionPaymentId')->nullable();
             $table->string('transactionStatus')->nullable();
             $table->timestamps();
         });

@@ -21,6 +21,8 @@ class Transaction extends Authenticatable
     protected $fillable = [
         'transactionCustomerId',
         'transactionAmount',
+        'transactionPaymentId',
+        'transactionPaymentMethod',
         'transactionStatus',
     ];
 

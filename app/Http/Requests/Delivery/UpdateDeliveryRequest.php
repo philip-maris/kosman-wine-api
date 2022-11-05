@@ -30,7 +30,7 @@ class UpdateDeliveryRequest extends FormRequest
             'deliveryMinFee'=>['required', 'max:255'],
             'deliveryMaxFee'=>['required', 'max:255'],
             'deliveryDescription'=>['required', 'max:255'],
-            'customerId'=>['required', 'max:255'],
+            'deliveryCustomerId'=>['required', 'max:255'],
         ];
     }
 }

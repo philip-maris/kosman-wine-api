@@ -30,7 +30,7 @@ class BannerService
             $request->validated($request);
 
             // verify admin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['bannerCustomerId']);
 
             $banner = Banner::create(array_merge($request->all(),
                 ['bannerStatus' => 'ACTIVE']));
@@ -56,7 +56,7 @@ class BannerService
             //  validate
             $request->validated($request);
             // verify adnin
-            $customer =  $this->VERIFY_ADMIN($request['customerId']);
+            $customer =  $this->VERIFY_ADMIN($request['bannerCustomerId']);
 
             $banner = Banner::where('bannerId', $request['bannerId'])->first();
             if (!$banner) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD, 'INVALID BANNER ID');

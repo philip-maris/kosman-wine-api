@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Product\CreateProductRequest;
 use App\Http\Requests\Product\ReadByProductIdRequest;
+use App\Http\Requests\Product\ReadByProductVariationIdRequest;
 use App\Http\Requests\Product\UpdateProductRequest;
 use App\Http\Service\ProductService;
 use Illuminate\Http\JsonResponse;
@@ -29,6 +30,10 @@ class ProductsController extends Controller
     public function readById(ReadByProductIdRequest $request): JsonResponse
     {
         return $this->productService->readById($request);
+    }
+    public function readByProductVariation(ReadByProductVariationIdRequest $request): JsonResponse
+    {
+        return $this->productService->readByProductVariationId($request);
     }
     public function delete(ReadByProductIdRequest $request): JsonResponse
     {

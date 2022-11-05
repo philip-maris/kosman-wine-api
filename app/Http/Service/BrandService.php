@@ -27,7 +27,7 @@ class BrandService
             $request->validated($request);
 
             // verify adnin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['brandCustomerId']);
 
             $response = Brand::create(array_merge($request->all(),
                 ['brandStatus' => 'ACTIVE']));
@@ -50,7 +50,7 @@ class BrandService
             $request->validated($request);
 
             // verify adnin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['brandCustomerId']);
 
             $brand = Brand::find($request['brandId']);
             if (!$brand) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD);
@@ -100,7 +100,7 @@ class BrandService
             //TODO VALIDATION
             $request->validated($request->all());
               // verify admin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['brandCustomerId']);
 
             $brand = Brand::where('brandId', $request['brandId'])->first();
             if (!$brand) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD);

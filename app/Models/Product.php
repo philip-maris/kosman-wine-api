@@ -23,12 +23,18 @@ class Product extends Model
         'productDescription',
         'productDiscount',
         'productQuantity',
+        'productVariationId',
         'productStatus'
     ];
 
     public function brands(): BelongsTo
     {
         return $this->belongsTo(Brand::class, 'productBrandId', 'brandId');
+    }
+
+    public function productVariation(): BelongsTo
+    {
+        return $this->belongsTo(ProductVariation::class, 'productVariationId', 'productVariationId');
     }
 
     public function categories(): BelongsTo

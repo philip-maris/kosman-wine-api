@@ -30,6 +30,11 @@ return new class extends Migration
             $table->foreignId("productCategoryId")
                 ->constrained('categories', 'categoryId')
                 ->onDelete('cascade');
+
+            //todo foreign key for productVariation
+            $table->foreignId("productVariationId")
+                ->constrained('product_variations', 'productVariationId')
+                ->onDelete('cascade');
             $table->string("productQuantity")->nullable();
             $table->string("productStatus")->nullable();
             $table->timestamps();

@@ -26,7 +26,7 @@ class UpdateCategoryRequest extends FormRequest
         return [
             'categoryName'=>['required'],
             'categoryId'=>['required'],
-            'customerId'=>['required'],
+            'categoryCustomerId'=>['required'],
         ];
     }
 }

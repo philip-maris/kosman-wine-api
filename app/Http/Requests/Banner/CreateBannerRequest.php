@@ -27,7 +27,7 @@ class CreateBannerRequest extends FormRequest
             'bannerHeroImage'=>['required', 'max:255'],
             'bannerStatus'=>['required', 'max:255'],
             'bannerTittle'=>['required', 'max:255'],
-            'customerId'=>['required'],
+            'bannerCustomerId'=>['required'],
         ];
     }
 }

@@ -33,7 +33,8 @@ class CreateProductRequest extends FormRequest
             'productDiscount'=>['required', 'string'],
             'productQuantity'=>['required', 'string'],
             'productCategoryId'=>['required'],
-            'customerId'=>['required'],
+            'productVariationId'=>['required'],
+            'productCustomerId'=>['required'],
         ];
     }
 

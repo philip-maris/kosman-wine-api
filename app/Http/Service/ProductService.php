@@ -4,6 +4,7 @@ namespace App\Http\Service;
 
 use App\Http\Requests\Product\CreateProductRequest;
 use App\Http\Requests\Product\ReadByProductIdRequest;
+use App\Http\Requests\Product\ReadByProductVariationIdRequest;
 use App\Http\Requests\Product\UpdateProductRequest;
 use App\Models\Brand;
 use App\Models\Category;
@@ -30,7 +31,7 @@ class ProductService
             $request->validated($request);
 
             // verify admin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['productCustomerId']);
 
             $category = Category::find($request['productCategoryId']);
             $brand = Brand::find($request['productBrandId']);
@@ -68,7 +69,7 @@ class ProductService
             $request->validated($request);
 
             // verify admin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['productCustomerId']);
             $product = Product::find($request['productId']);
             if (!$product) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD, "UNABLE TO LOCATE PRODUCT");
             $response = $product->update(array_merge($request->except('productId'),
@@ -111,13 +112,27 @@ class ProductService
         }
     }
 
+    public function readByProductVariationId(ReadByProductVariationIdRequest $request): JsonResponse
+    {
+        try {
+            //TODO VALIDATION
+            $request->validated($request->all());
+            //todo action
+            $product = Product::where('productVariationId', $request['productVariationId'])->first();
+            if (!$product) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD);
+            return  $this->BASE_RESPONSE($product);
+        }catch (Exception $ex){
+            return $this->ERROR_RESPONSE($ex->getMessage());
+        }
+    }
+
     public function delete(ReadByProductIdRequest $request){
         try {
             //TODO VALIDATION
             $request->validated($request->all());
 
             // verify admin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['productCustomerId']);
 
             $product = Product::where('productId', $request['productId'])->first();
             if (!$product) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD);

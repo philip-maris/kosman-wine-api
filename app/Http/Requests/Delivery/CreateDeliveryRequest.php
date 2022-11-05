@@ -29,7 +29,7 @@ class CreateDeliveryRequest extends FormRequest
             'deliveryMinFee'=>['required'],
             'deliveryMaxFee'=>['required'],
             'deliveryDescription'=>['required'],
-            'customerId'=>['required'],
+            'deliveryCustomerId'=>['required'],
         ];
     }
 }

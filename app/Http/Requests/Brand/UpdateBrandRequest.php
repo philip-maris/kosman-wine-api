@@ -26,7 +26,7 @@ class UpdateBrandRequest extends FormRequest
         return [
             'brandName'=>['required', 'string'],
             'brandId'=>['required', 'string'],
-            'customerId'=>['required', 'string'],
+            'brandCustomerId'=>['required', 'string'],
         ];
     }
 

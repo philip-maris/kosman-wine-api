@@ -23,13 +23,9 @@ class UpdateTransactionRequest extends FormRequest
      */
     public function rules()
     {
+        //not implemented
         return [
             'transaction'=>['required', 'max:255'],
-            'deliveryCityState'=>['required', 'max:255'],
-            'deliveryStatus'=>['required', 'max:255'],
-            'deliveryMinFee'=>['required', 'max:255'],
-            'deliveryMaxFee'=>['required', 'max:255'],
-            'deliveryDescription'=>['required', 'max:255'],
         ];
     }
 }

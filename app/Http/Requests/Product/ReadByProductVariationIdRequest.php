@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Brand;
+namespace App\Http\Requests\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateBrandRequest extends FormRequest
+class ReadByProductVariationIdRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,7 @@ class CreateBrandRequest extends FormRequest
     public function rules()
     {
         return [
-            'brandName'=>['required', 'string', 'unique:brands'],
-            'brandCustomerId'=>['required'],
+            'productVariationId'=>['required'],
         ];
     }
-
 }

@@ -169,9 +169,6 @@ Route::prefix('v1')->group(function (){
     });
 
 
-
-
-
 //todo protected routes
     Route::middleware('auth:sanctum')->group(function () {
         //todo authentication protected route

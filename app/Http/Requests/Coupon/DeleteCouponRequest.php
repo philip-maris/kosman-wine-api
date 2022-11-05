@@ -25,7 +25,7 @@ class DeleteCouponRequest extends FormRequest
     {
         return [
             'couponId'=>['required'],
-            'customerId'=>['required']
+            'couponCustomerId'=>['required']
         ];
     }
 }

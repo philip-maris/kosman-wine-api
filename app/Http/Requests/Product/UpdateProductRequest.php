@@ -25,7 +25,7 @@ class UpdateProductRequest extends FormRequest
     {
         return [
             'productId'=>['required'],
-            'customerId'=>['required'],
+            'productCustomerId'=>['required'],
             'productName'=>['required', 'string'],
             'productSellingPrice'=>['required', 'numeric'],
             'productOfferPrice'=>['required', 'numeric'],

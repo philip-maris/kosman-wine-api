@@ -29,7 +29,7 @@ class DeliveryService
             $request->validated($request);
 
             // verify adnin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['deliveryCustomerId']);
 
             $testDelivery = Delivery::where('deliveryState', $request['deliveryState'])->first();
             //todo action
@@ -62,7 +62,7 @@ class DeliveryService
             $request->validated($request);
 
             // verify adnin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['deliveryCustomerId']);
 
              $delivery = Delivery::where('deliveryId', $request['deliveryId'])->first();
              if (!$delivery) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD);

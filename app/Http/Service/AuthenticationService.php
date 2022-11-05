@@ -103,7 +103,7 @@ class AuthenticationService
             // SEND NOTIFICATION
             $this->SEND_NOTIFICATION(
                 "{$customer['customerFirstName']} " ." {$customer['customerLastName']} just signed up.",
-                'YELLOW',$customer->id,'NEW CUSTOMER'
+                'YELLOW',$customer['customerId'],'NEW CUSTOMER'
             );
 
             return $this->SUCCESS_RESPONSE("CREATED  SUCCESSFUL");

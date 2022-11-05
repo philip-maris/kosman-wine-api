@@ -12,6 +12,7 @@ use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProductVariationController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TestimonyController;
@@ -56,6 +57,7 @@ Route::prefix('v1')->group(function (){
                 Route::post('/update-product', 'update')->name("updateProduct");
                 Route::get('/read-products', 'read')->name("readProduct");
                 Route::post('/read-product-by-id', 'readById')->name("readByIdProduct");
+                Route::post('/read-product-by-variations', 'readByProductVariation')->name("readByProductVariation");
                 Route::post('/delete-product', 'delete')->name("deleteProduct");
             });
     //todo public category route
@@ -168,6 +170,13 @@ Route::prefix('v1')->group(function (){
         Route::post('/delete-coupon', 'delete');
     });
 
+    //todo productVariation route
+    Route::controller(ProductVariationController::class)->group(function (){
+        Route::get('/read-product-variations', 'read');
+        Route::post('/create-product-variation', 'create');
+        Route::post('/read-product-variation-by-id', 'readById');
+        Route::post('/update-product-variation', 'update');
+    });
 
 
 

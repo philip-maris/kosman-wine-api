@@ -32,7 +32,7 @@ class CouponService
             //  validate
             $request->validated($request);
             // verify admin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['couponCustomerId']);
 
             $coupon = Coupon::create([
                 'couponCode'=>$this->couponCodeGenerator(),
@@ -62,7 +62,7 @@ class CouponService
             $request->validated($request);
 
             // verify admin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['couponCustomerId']);
 
              $coupon = Coupon::where('couponId', $request['couponId'])->first();
              if (!$coupon) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD);
@@ -132,7 +132,7 @@ class CouponService
             //TODO VALIDATION
             $request->validated($request->all());
             // verify admin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['couponCustomerId']);
 
             $coupon = Coupon::where('couponId', $request['couponId'])->first();
             if (!$coupon) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD);

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Brand;
+namespace App\Http\Requests\ProductVariation;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateBrandRequest extends FormRequest
+class CreateProductVariationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,9 @@ class CreateBrandRequest extends FormRequest
     public function rules()
     {
         return [
-            'brandName'=>['required', 'string', 'unique:brands'],
-            'brandCustomerId'=>['required'],
+            'productVariationSize'=>['required', 'string','unique:product_variations'],
+            'productVariationStatus'=>['required', 'string'],
+            'productVariationCustomerId'=>['required'],
         ];
     }
 

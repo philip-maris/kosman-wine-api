@@ -25,7 +25,7 @@ class UpdateCouponRequest extends FormRequest
     {
         return [
             'couponId'=>['required'],
-            'customerId'=>['required'],
+            'couponCustomerId'=>['required'],
             'couponValue'=>['required', 'max:255'],
             'couponStatus'=>['required', 'max:255'],
         ];

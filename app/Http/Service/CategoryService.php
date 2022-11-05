@@ -25,7 +25,7 @@ class CategoryService
             //TODO VALIDATION
             $request->validated($request);
             // verify admin
-            $customer = $this->VERIFY_ADMIN($request['customerId']);
+            $customer = $this->VERIFY_ADMIN($request['categoryCustomerId']);
 
             $response = Category::create(array_merge($request->all(),
                 ['categoryStatus'=>'ACTIVE']));

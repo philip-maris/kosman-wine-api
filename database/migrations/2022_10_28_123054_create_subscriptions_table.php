@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('subscriptionCustomerId')
                 ->constrained('customers', 'customerId')
                 ->onDelete('cascade');
-            $table->string('subscriptionStatus');
+            $table->string('subscriptionStatus')->default("ACTIVE");
             $table->timestamps();
         });
     }

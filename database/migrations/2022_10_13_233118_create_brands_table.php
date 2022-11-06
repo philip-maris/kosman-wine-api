@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->id("brandId");
             $table->string("brandName")->nullable();
-            $table->string("brandStatus")->nullable();
+            $table->string("brandStatus")->default("ACTIVE");
             $table->timestamps();
         });
     }

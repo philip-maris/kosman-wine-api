@@ -25,7 +25,6 @@ class DeleteTestimonyRequest extends FormRequest
     {
         return [
             'testimonyId'=>['required'],
-            'customerId'=>['required'],
         ];
     }
 }

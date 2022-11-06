@@ -36,7 +36,7 @@ return new class extends Migration
                 ->constrained('product_variations', 'productVariationId')
                 ->onDelete('cascade');
             $table->string("productQuantity")->nullable();
-            $table->string("productStatus")->nullable();
+            $table->string("productStatus")->default("ACTIVE");
             $table->timestamps();
         });
     }

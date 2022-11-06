@@ -24,9 +24,8 @@ class CreateTestimonyRequest extends FormRequest
     public function rules()
     {
         return [
-            'testimonyCustomerId'=>['required', 'max:255'],
+            'testimonyCustomerId'=>['required'],
             'testimonyContent'=>['required', 'max:255'],
-            'testimonyStatus'=>['required', 'max:255'],
         ];
     }
 }

@@ -24,12 +24,11 @@ class CreateNotificationRequest extends FormRequest
     public function rules()
     {
         return [
-            'notificationUserType'=>['required', 'max:255'],
-            'notificationUserId'=>['required', 'max:255'],
-            'notificationTittle'=>['required', 'max:255'],
-            'notificationColor'=>['required', 'max:255'],
+            'notificationUserType'=>['required'],
+            'notificationUserId'=>['required'],
+            'notificationTitle'=>['required', 'max:255'],
+            'notificationColor'=>['required'],
             'notificationMessage'=>['required', 'max:255'],
-            'notificationStatus'=>['required', 'max:255'],
         ];
     }
 }

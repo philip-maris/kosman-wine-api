@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('transactionAmount')->nullable();
             $table->string('transactionPaymentId')->nullable();
             $table->string('transactionPaymentMethod')->nullable();
-            $table->string('transactionStatus')->nullable();
+            $table->string('transactionStatus')->default("ACTIVE");
             $table->timestamps();
         });
     }

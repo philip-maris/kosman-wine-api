@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('couponId');
             $table->string('couponCode')->nullable();
             $table->string('couponValue')->nullable();
-            $table->string('couponStatus')->nullable();
+            $table->string('couponStatus')->default("ACTIVE");
             $table->timestamps();
         });
     }

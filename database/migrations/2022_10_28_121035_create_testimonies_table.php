@@ -16,10 +16,9 @@ return new class extends Migration
         Schema::create('testimonies', function (Blueprint $table) {
             $table->id('testimonyId');
             $table->string('testimonyContent')->nullable();
-            $table->string('testimonyStatus')->nullable();
             $table->foreignId('testimonyCustomerId')
-                ->constrained('customers', 'customerId')
-                ->onDelete('cascade');
+                ->constrained('customers', 'customerId');
+            $table->string('testimonyStatus')->default("ACTIVE");
             $table->timestamps();
         });
     }

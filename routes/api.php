@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\AuthenticationsController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BrandsController;
@@ -18,7 +17,6 @@ use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TestimonyController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\WishlistsController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*

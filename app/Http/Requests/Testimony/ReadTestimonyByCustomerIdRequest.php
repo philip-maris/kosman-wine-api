@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Transaction;
+namespace App\Http\Requests\Testimony;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateTransactionRequest extends FormRequest
+class ReadTestimonyByCustomerIdRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,9 @@ class UpdateTransactionRequest extends FormRequest
      */
     public function rules()
     {
-        //not implemented
         return [
-            'transaction'=>['required', 'max:255'],
+            'testimonyCustomerId'=>['required'],
+            'testimonyContent'=>['required', 'max:255'],
         ];
     }
 }

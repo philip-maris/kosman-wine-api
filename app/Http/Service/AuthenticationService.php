@@ -46,7 +46,6 @@ class AuthenticationService
                 'customerLastName'=>$request['customerLastName'],
                 'customerPhoneNo'=>$request['customerPhoneNo'],
                 'customerEmail'=>$request['customerEmail'],
-                'customerStatus'=>"PENDING",
                 'customerOtp'=>$otp,
                 'customerOtpExpired'=>$this->addTimestamp(min:"5")
             ]);

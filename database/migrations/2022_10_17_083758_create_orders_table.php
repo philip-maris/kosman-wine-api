@@ -21,7 +21,7 @@ return new class extends Migration
                     ->constrained('deliveries', 'deliveryId')->onDelete('cascade');
             $table->string("orderTotalPrice")->nullable();
             $table->string("orderSubTotalPrice")->nullable();
-            $table->string("orderStatus")->nullable();
+            $table->string("orderStatus")->default("ACTIVE");
             $table->timestamps();
         });
     }

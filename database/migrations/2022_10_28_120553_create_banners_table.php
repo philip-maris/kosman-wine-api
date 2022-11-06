@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('bannerId');
             $table->string('bannerStatus')->nullable();
             $table->string('bannerHeroImage')->nullable();
-            $table->string('bannerTittle')->nullable();
+            $table->string('bannerTittle')->default("ACTIVE");
             $table->timestamps();
         });
     }

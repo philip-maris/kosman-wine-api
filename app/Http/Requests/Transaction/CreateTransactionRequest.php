@@ -25,9 +25,8 @@ class CreateTransactionRequest extends FormRequest
     {
         return [
             'transactionCustomerId'=>['required'],
-            'transactionAmount'=>['required', 'max:255'],
-            'transactionPaymentMethod'=>['required', 'max:255'],
-            'transactionStatus'=>['required', 'max:255'],
+            'transactionAmount'=>['required'],
+            'transactionPaymentMethod'=>['required'],
         ];
     }
 }

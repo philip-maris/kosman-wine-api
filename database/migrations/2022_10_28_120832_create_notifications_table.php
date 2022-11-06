@@ -23,7 +23,7 @@ return new class extends Migration
                 ->constrained('customers', 'customerId')
                 ->onDelete('cascade');
             $table->string('notificationTittle')->nullable();
-            $table->string('notificationStatus')->nullable();
+            $table->string('notificationStatus')->default("ACTIVE");
             $table->timestamps();
         });
     }

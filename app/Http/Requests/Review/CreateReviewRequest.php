@@ -24,8 +24,8 @@ class CreateReviewRequest extends FormRequest
     public function rules()
     {
         return [
-            'reviewProductId'=>['required', 'max:255'],
-            'reviewRating'=>['required', 'max:255'],
+            'reviewProductId'=>['required'],
+            'reviewRating'=>['required'],
         ];
     }
 }

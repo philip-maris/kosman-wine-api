@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId("cartProductId")
                 ->constrained('products', 'productId')->onDelete('cascade');
             $table->string("cartAddedQuantity");
-            $table->string("cartStatus");
+            $table->string("cartStatus")->default("ACTIVE");
             $table->timestamps();
         });
     }

@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/', function () {
+    return dd("hello");
+});
 //todo admin protected route
 Route::controller(AdminsController::class)->group(function (){
     Route::get('/admin/dashboard/overview', 'overview')->name('overview');

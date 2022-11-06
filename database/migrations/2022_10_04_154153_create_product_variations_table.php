@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('product_variations', function (Blueprint $table) {
             $table->id('productVariationId');
             $table->string('productVariationSize')->nullable();
-            $table->string('productVariationSize')->nullable();
+            $table->string('productVariationType')->nullable();
             $table->string('productVariationStatus')->default("ACTIVE");
             $table->timestamps();
         });

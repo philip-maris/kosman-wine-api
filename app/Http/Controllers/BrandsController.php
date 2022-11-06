@@ -14,6 +14,7 @@ class BrandsController extends Controller
     use ResponseUtil;
 
     public function __construct(protected BrandService $brandService){
+
         //todo code here
     }
 

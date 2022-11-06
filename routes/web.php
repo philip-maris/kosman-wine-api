@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return dd("hello");
+     dd("hello");
 });
 //todo admin protected route
 Route::controller(AdminsController::class)->group(function (){

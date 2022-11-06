@@ -3,12 +3,13 @@
 namespace App\Util\baseUtil;
 
 use App\Models\Notification;
+use App\Util\exceptionUtil\ExceptionCase;
 use App\Util\exceptionUtil\ExceptionUtil;
 
 trait NotificationUtil{
    public function SEND_NOTIFICATION(string $message, string $color,string $customerId, string $tittle): int
     {
-        $notification = Notification::Create([
+        $notification = Notification::create([
             'notificationMessage' => $message,
             'notificationColor' => $color,
             'notificationCustomerType' =>'CUSTOMER',

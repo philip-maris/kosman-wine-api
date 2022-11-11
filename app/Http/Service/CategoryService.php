@@ -25,17 +25,13 @@ class CategoryService
             //TODO VALIDATION
             $request->validated($request);
             // verify admin
-            $customer = $this->VERIFY_ADMIN($request['categoryCustomerId']);
+          //  $customer = $this->VERIFY_ADMIN($request['categoryCustomerId']);
 
-            $response = Category::create(array_merge($request->all(),
-                ['categoryStatus'=>'ACTIVE']));
+            $response = Category::create($request->all());
             if (!$response) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_CREATE);
 
             // SEND NOTIFICATION
-            $this->SEND_CREATION_NOTIFICATION(
-                "{$customer['customerFirstName']} " . "{$customer['customerLastName']}",
-                $customer['customerId'],$response['categoryName'],'Category'
-            );
+
             return $this->SUCCESS_RESPONSE("CATEGORY CREATED SUCCESSFUL");
         }catch (Exception $ex){
             return $this->ERROR_RESPONSE($ex->getMessage());

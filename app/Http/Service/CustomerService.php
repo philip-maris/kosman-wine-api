@@ -55,6 +55,19 @@ class CustomerService
 
     }
 
+    public function revalidate(): JsonResponse
+    {
+        try {
+            dd( auth('sanctum')->user());
+            $customer = Customer::where('customerId', auth()->user()->id);
+            if (!$customer)  throw new ExceptionUtil(ExceptionCase::NOT_SUCCESSFUL);
+            return $this->BASE_RESPONSE($customer);
+        }catch (Exception $ex){
+            return $this->ERROR_RESPONSE($ex->getMessage());
+        }
+
+    }
+
     public function readById(ReadByCustomerIdRequest $request): JsonResponse
     {
         try {

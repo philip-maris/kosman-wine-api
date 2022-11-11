@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id('transactionId');
             $table->foreignId('transactionCustomerId')
-                ->constrained('customers', 'customerId')
-                ->onDelete('cascade');
+                ->constrained('customers', 'customerId');
+            $table->foreignId('orderId')
+                ->constrained('orders', 'orderId');
             $table->string('transactionAmount')->nullable();
-            $table->string('transactionPaymentId')->nullable();
+            $table->string('transactionReference')->nullable();
+            $table->string('transactionPaymentSystemId')->nullable();
             $table->string('transactionPaymentMethod')->nullable();
             $table->string('transactionStatus')->default("ACTIVE");
             $table->timestamps();

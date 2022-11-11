@@ -27,16 +27,16 @@ class BrandService
             $request->validated($request);
 
             // verify adnin
-            $customer = $this->VERIFY_ADMIN($request['brandCustomerId']);
+            //$customer = $this->VERIFY_ADMIN($request['brandCustomerId']);
 
             $response = Brand::create(array_merge($request->all(),
                 ['brandStatus' => 'ACTIVE']));
             if (!$response) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_CREATE);
 
-            $this->SEND_CREATION_NOTIFICATION(
-                "{$customer['customerFirstName']} " . "{$customer['customerLastName']}",
-                $customer['customerId'], $response['brandName'], 'Brand'
-            );
+//            $this->SEND_CREATION_NOTIFICATION(
+//                "{$customer['customerFirstName']} " . "{$customer['customerLastName']}",
+//                $customer['customerId'], $response['brandName'], 'Brand'
+//            );
             return $this->SUCCESS_RESPONSE("BRAND CREATED SUCCESSFUL");
         } catch (Exception $ex) {
             return $this->ERROR_RESPONSE($ex->getMessage());

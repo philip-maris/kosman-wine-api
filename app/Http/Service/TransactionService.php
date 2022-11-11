@@ -26,8 +26,7 @@ class TransactionService
             $customer = Customer::find($request['transactionCustomerId']);
             if (!$customer) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD, "INVALID CUSTOMER ID");
 
-            $transaction = Transaction::create(array_merge($request->all(),
-                ['transactionStatus'=>'ACTIVE']));
+            $transaction = Transaction::create($request->all());
 
             //todo check its successful
             if (!$transaction) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_CREATE);

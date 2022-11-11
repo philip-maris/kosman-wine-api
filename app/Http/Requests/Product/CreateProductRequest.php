@@ -24,16 +24,15 @@ class CreateProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'productName'=>['required', 'string'],
+            'productName'=>['required', 'string', 'max:255'],
             'productBrandId'=>['required'],
-            'productSellingPrice'=>['required', 'string'],
-            'productOfferPrice'=>['required', 'string'],
+            'productSellingPrice'=>['nullable'],
+            'productOfferPrice'=>['nullable'],
             'productImage'=>['required'],
-            'productDescription'=>['required','string'],
-            'productDiscount'=>['required', 'string'],
-            'productQuantity'=>['required', 'string'],
+            'productDescription'=>['required'],
+            'productDiscount'=>['nullable'],
+            'productQuantity'=>['required'],
             'productCategoryId'=>['required'],
-            'productVariationId'=>['required'],
             'productCustomerId'=>['required'],
         ];
     }

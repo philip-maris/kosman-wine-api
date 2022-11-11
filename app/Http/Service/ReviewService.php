@@ -18,7 +18,6 @@ use \Illuminate\Http\JsonResponse;
 class ReviewService
 {
     use ResponseUtil;
-    use NotificationUtil;
 
     public function create(CreateReviewRequest $request): JsonResponse
     {

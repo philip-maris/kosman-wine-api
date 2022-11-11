@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('subscriptions', function (Blueprint $table) {
-            $table->id('subscriptionId');
-            $table->string('subscriptionCustomerEmail');
-            $table->string('subscriptionStatus')->default("ACTIVE");
+        Schema::create('default_delivery_fees', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subscriptions');
+        Schema::dropIfExists('default_delivery_fees');
     }
 };

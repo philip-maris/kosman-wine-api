@@ -32,7 +32,7 @@ class CouponService
             //  validate
             $request->validated($request);
             // verify admin
-            $customer = $this->VERIFY_ADMIN($request['couponCustomerId']);
+         //   $customer = $this->VERIFY_ADMIN($request['couponCustomerId']);
 
             $coupon = Coupon::create([
                 'couponCode'=>$this->couponCodeGenerator(),
@@ -44,10 +44,10 @@ class CouponService
             if (!$coupon) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_CREATE);
 
             // SEND NOTIFICATION
-            $this->SEND_CREATION_NOTIFICATION(
-                "{$customer['customerFirstName']} " . "{$customer['customerLastName']}",
-                $customer['customerId'],"#{$request['couponValue']}",'Coupon'
-            );
+//            $this->SEND_CREATION_NOTIFICATION(
+//                "{$customer['customerFirstName']} " . "{$customer['customerLastName']}",
+//                $customer['customerId'],"#{$request['couponValue']}",'Coupon'
+//            );
             return $this->SUCCESS_RESPONSE("CREATED SUCCESSFUL");
         }catch (Exception $ex){
             return $this->ERROR_RESPONSE($ex->getMessage());

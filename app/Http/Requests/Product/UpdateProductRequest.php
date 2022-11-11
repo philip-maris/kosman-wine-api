@@ -24,15 +24,16 @@ class UpdateProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'productId'=>['required'],
-            'productCustomerId'=>['required'],
-            'productName'=>['required', 'string'],
-            'productSellingPrice'=>['required', 'numeric'],
-            'productOfferPrice'=>['required', 'numeric'],
+            'productName'=>['required', 'string', 'max:255'],
+            'productBrandId'=>['required'],
+            'productSellingPrice'=>['nullable'],
+            'productOfferPrice'=>['nullable'],
             'productImage'=>['required'],
-            'productDescription'=>['required','string'],
-            'productDiscount'=>['required', 'numeric', 'max:100'],
-            'productQuantity'=>['required', 'numeric'],
+            'productDescription'=>['required'],
+            'productDiscount'=>['nullable'],
+            'productQuantity'=>['required'],
+            'productCategoryId'=>['required'],
+            'productCustomerId'=>['required'],
         ];
     }
 }

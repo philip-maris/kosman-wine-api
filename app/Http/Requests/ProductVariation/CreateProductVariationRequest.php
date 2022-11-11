@@ -24,8 +24,8 @@ class CreateProductVariationRequest extends FormRequest
     public function rules()
     {
         return [
-            'productVariationSize'=>['required', 'string','unique:product_variations'],
-            'productVariationStatus'=>['required', 'string'],
+            'productVariationSize'=>['required', 'string'],
+            'productVariationPrice'=>['required', 'string'],
             'productVariationCustomerId'=>['required'],
         ];
     }

@@ -24,9 +24,10 @@ class UpdateCartRequest extends FormRequest
     public function rules()
     {
         return [
-            'cartCustomerId'=>['required', 'max:255'],
-            'cartProductId'=>['required', 'max:255'],
-            'cartAddedQuantity'=>['required', 'max:255'],
+            'cartCustomerId'=>['required'],
+            'cartProductId'=>['required'],
+            'cartAddedQuantity'=>['required'],
+            'cartId'=>['required'],
         ];
     }
 }

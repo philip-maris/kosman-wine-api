@@ -24,10 +24,8 @@ class CreateBannerRequest extends FormRequest
     public function rules()
     {
         return [
-            'bannerHeroImage'=>['required', 'max:255'],
-            'bannerStatus'=>['required', 'max:255'],
-            'bannerTittle'=>['required', 'max:255'],
-            'bannerCustomerId'=>['required'],
+            'bannerHeroImage'=>['required', 'image'],
+            'bannerTitle'=>['required', 'max:255', 'string'],
         ];
     }
 }

@@ -13,7 +13,8 @@ trait ResponseUtil
             "responseCode"=>$responseCode,
             "responseMessage"=>$responseMessage,
             "data"=>$data
-        ]);
+        ])->header('Content-Type', "application/json")
+            ->header('Content-Type', "application/json");
     }
 
      protected  function ERROR_RESPONSE($responseMessage, $responseCode=101): JsonResponse
@@ -22,7 +23,8 @@ trait ResponseUtil
             return response()->json([
                 "responseCode"=>$responseCode,
                 "responseMessage"=>$responseMessage
-            ]);
+            ])->header('Content-Type', "application/json")
+                ->header('Content-Type', "application/json");
         }
 
         protected  function SUCCESS_RESPONSE($responseMessage): JsonResponse
@@ -31,7 +33,8 @@ trait ResponseUtil
             return response()->json([
                 "responseCode"=>"200",
                 "responseMessage"=>$responseMessage
-            ]);
+            ])->header('Content-Type', "application/json")
+                ->header('Content-Type', "application/json");
         }
 
 }

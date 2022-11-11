@@ -24,7 +24,7 @@ class ReadByCartIdRequest extends FormRequest
     public function rules()
     {
         return [
-            'cartCustomerId'=>['required'],
+            'cartId'=>['required'],
         ];
     }
 }

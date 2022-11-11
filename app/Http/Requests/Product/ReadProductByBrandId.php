@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Testimony;
+namespace App\Http\Requests\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateNotificationRequest extends FormRequest
+class ReadProductByBrandId extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,7 @@ class CreateNotificationRequest extends FormRequest
     public function rules()
     {
         return [
-            'notificationUserType'=>['required'],
-            'notificationUserId'=>['required'],
-            'notificationTitle'=>['required', 'max:255'],
-            'notificationColor'=>['required'],
-            'notificationMessage'=>['required', 'max:255'],
+            'productBrandId'=>['required'],
         ];
     }
 }

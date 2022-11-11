@@ -29,11 +29,12 @@ class CustomersController extends Controller
         return $this->customerService->read();
     }
 
-    public function readDelivery(): String
+    public function revalidate(): JsonResponse
     {
-
-        return "This si response";
+        return $this->customerService->revalidate();
     }
+
+
 
     public function readById(ReadByCustomerIdRequest $request): JsonResponse
     {

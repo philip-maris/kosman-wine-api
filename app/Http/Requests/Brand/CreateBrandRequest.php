@@ -24,8 +24,7 @@ class CreateBrandRequest extends FormRequest
     public function rules()
     {
         return [
-            'brandName'=>['required', 'string', 'unique:brands'],
-            'brandCustomerId'=>['required'],
+            'brandName'=>['required', 'string', 'unique:brands']
         ];
     }
 

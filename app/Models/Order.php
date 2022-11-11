@@ -33,6 +33,7 @@ class Order extends Authenticatable
         return $this->hasOne(Delivery::class,'orderDeliveryId', 'deliveryId');
     }
 
+
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class, 'orderCustomerId', 'customerId');

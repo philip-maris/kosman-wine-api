@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Notification;
+namespace App\Http\Requests\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ReadByCustomerTypeRequest extends FormRequest
+class ReadProductByCategoryId extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class ReadByCustomerTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            'notificationCustomerType'=>['required'],
+            'productCategoryId'=>['required'],
         ];
     }
 }

@@ -64,9 +64,7 @@ class CartService
             }
 
             //todo update the cart
-            $response =    $cart->update(array_merge($request->only('cartAddedQuantity'), [
-                'cartStatus'=>'ACTIVE'
-            ]));
+            $response =    $cart->update($request->only('cartAddedQuantity'));
 
             if (!$response) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_UPDATE);
 

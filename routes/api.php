@@ -8,7 +8,6 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\DeliveryController;
-use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductVariationController;
@@ -36,6 +35,8 @@ Route::prefix('v1')->group(function (){
         Route::controller(CustomersController::class)->group(function (){
             Route::get('/read-customer', 'read');
             Route::post('/read-customer-by-id', 'readById');
+
+
         });
         //todo public authentication route
         Route::controller(AuthenticationsController::class)
@@ -55,6 +56,10 @@ Route::prefix('v1')->group(function (){
                 Route::post('/update-product', 'update')->name("updateProduct");
                 Route::get('/read-products', 'read')->name("readProduct");
                 Route::post('/read-product-by-id', 'readById')->name("readByIdProduct");
+                Route::post('/read-product-by-brand-id', 'readProductByBrandId')->name("readProductByBrandId");
+                Route::post('/read-product-by-category-id', 'readProductByCategoryId')->name("readProductByCategoryId");
+                Route::post('/filter-product-by-selling-price', 'filterProductBySellingPrice')->name("filterProductBySellingPrice");
+                Route::post('/filter-product-by-offering-price', 'readProductOfferPrice')->name("readProductOfferPrice");
                 Route::post('/read-product-by-variations', 'readByProductVariation')->name("readByProductVariation");
                 Route::post('/delete-product', 'delete')->name("deleteProduct");
             });
@@ -151,12 +156,7 @@ Route::prefix('v1')->group(function (){
         Route::post('/read-testimony-by-id', 'readById');
     });
 
-    //todo notification route
-    Route::controller(NotificationController::class)->group(function (){
-        Route::get('/read-notifications', 'read');
-        Route::post('/read-notification-by-id', 'readById');
-        Route::post('/read-notification-by-type', 'readByCustomerType');
-    });
+
 
     //todo coupon route
     Route::controller(CouponController::class)->group(function (){
@@ -186,6 +186,7 @@ Route::prefix('v1')->group(function (){
         //todo customer protected route
         Route::controller(CustomersController::class)->group(function (){
             Route::post('/update-customer', 'update');
+            Route::post('/read-customer-revalidate', 'revalidate');
         });
 
     });

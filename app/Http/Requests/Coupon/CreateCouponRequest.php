@@ -25,7 +25,6 @@ class CreateCouponRequest extends FormRequest
     {
         return [
             'couponValue'=>['required', 'max:255'],
-            'couponCustomerId'=>['required'],
         ];
     }
 }

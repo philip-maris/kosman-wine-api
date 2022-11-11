@@ -2,11 +2,13 @@
 
 namespace App\Exceptions;
 
+use App\Util\baseUtil\ResponseUtil;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
+    use ResponseUtil;
     /**
      * A list of exception types with their corresponding custom log levels.
      *
@@ -45,6 +47,11 @@ class Handler extends ExceptionHandler
     {
         $this->reportable(function (Throwable $e) {
             //
+        });
+        $this->renderable(function (\Illuminate\Auth\AuthenticationException $e, $request) {
+            if ($request->is('api/*')) {
+                return $this->ERROR_RESPONSE("NOT AUTHENTICATED", 300);
+            }
         });
     }
 }

@@ -2,14 +2,13 @@
 
 namespace App\Providers;
 
-use App\Events\Model\NotificationEvent;
+use App\Events\Model\Notification\NotificationForCreatingEvent;
 use App\Listeners\NotificationListener\NotificationCreateListener;
 use App\Listeners\NotificationListener\NotificationDeleteListener;
 use App\Listeners\NotificationListener\NotificationUpdateListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -22,11 +21,15 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        NotificationEvent::class =>[
+        NotificationForCreatingEvent::class =>[
             NotificationCreateListener::class,
-            NotificationUpdateListener::class,
-            NotificationDeleteListener::class
         ],
+        NotificationUpdateListener::class =>[
+            NotificationUpdateListener::class,
+        ],
+        NotificationDeleteListener::class =>[
+            NotificationDeleteListener::class
+        ]
     ];
 
     /**

@@ -24,11 +24,9 @@ class UpdateBannerRequest extends FormRequest
     public function rules()
     {
         return [
+            'bannerHeroImage'=>['required', 'image'],
+            'bannerTitle'=>['required', 'max:255', 'string'],
             'bannerId'=>['required'],
-            'bannerHeroImage'=>['required', 'max:255'],
-            'bannerStatus'=>['required', 'max:255'],
-            'bannerTittle'=>['required', 'max:255'],
-            'bannerCustomerId'=>['required'],
         ];
     }
 }

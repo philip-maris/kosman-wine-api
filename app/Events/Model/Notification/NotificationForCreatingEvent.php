@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Events\Model;
+namespace App\Events\Model\Notification;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class NotificationEvent
+class NotificationForCreatingEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 

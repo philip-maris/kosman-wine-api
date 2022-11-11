@@ -23,9 +23,11 @@ class Order extends Authenticatable
     protected $fillable = [
         'orderCustomerId',
         'orderDeliveryId',
-        'orderSubTotalPrice',
+        'orderTotalAmount',
+        'orderReference',
+        'orderPaymentMethod',
+        'orderSubTotalAmount',
         'orderStatus',
-        'orderTotalPrice',
     ];
 
     public function delivery():HasOne

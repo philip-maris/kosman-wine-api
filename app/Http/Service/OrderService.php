@@ -88,9 +88,9 @@ class OrderService
     public function read(): JsonResponse
     {
         try {
-            $delivery = Order::all();
-            if (!$delivery)  throw new ExceptionUtil(ExceptionCase::NOT_SUCCESSFUL);
-            return $this->BASE_RESPONSE($delivery);
+            $order = Order::all();
+            if (!$order)  throw new ExceptionUtil(ExceptionCase::NOT_SUCCESSFUL);
+            return $this->BASE_RESPONSE($order);
         }catch (Exception $ex){
             return $this->ERROR_RESPONSE($ex->getMessage());
         }
@@ -104,9 +104,9 @@ class OrderService
             $request->validated($request->all());
 
             //todo action
-            $delivery = Order::where('orderId', $request['orderId'])->first();
-            if (!$delivery) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD);
-            return  $this->BASE_RESPONSE($delivery);
+            $order = Order::where('orderId', $request['orderId'])->first();
+            if (!$order) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD);
+            return  $this->BASE_RESPONSE($order);
         }catch (Exception $ex){
             return $this->ERROR_RESPONSE($ex->getMessage());
         }

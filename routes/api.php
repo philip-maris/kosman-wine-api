@@ -9,6 +9,8 @@ use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderDetailsController;
+use App\Http\Controllers\OrderItemsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductVariationController;
 use App\Http\Controllers\ReviewController;
@@ -97,6 +99,22 @@ Route::prefix('v1')->group(function (){
         Route::post('/create-order', 'create');
         Route::post('/read-order-by-id', 'readById');
         Route::post('/update-order', 'update');
+    });
+
+    //todo orderItems route
+    Route::controller(OrderItemsController::class)->group(function (){
+        Route::get('/read-order-items', 'read');
+        Route::post('/create-order-items', 'create');
+        Route::post('/read-order-items-by-id', 'readById');
+        Route::post('/read-order-items-by-order-id', 'readByOrderId');
+    });
+
+    //todo orderDetails route
+    Route::controller(OrderDetailsController::class)->group(function (){
+        Route::get('/read-order-details', 'read');
+        Route::post('/create-order-details', 'create');
+        Route::post('/read-order-details-by-id', 'readById');
+        Route::post('/read-order-details-by-order-id', 'readById');
     });
 
     //todo cart route

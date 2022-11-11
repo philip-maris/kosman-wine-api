@@ -17,9 +17,6 @@ return new class extends Migration
             $table->id("cartId");
             $table->foreignId("cartCustomerId")
                 ->constrained('customers', 'customerId')->onDelete('cascade');
-            $table->foreignId("cartProductId")
-                ->constrained('products', 'productId')->onDelete('cascade');
-            $table->string("cartAddedQuantity");
             $table->string("cartStatus")->default("ACTIVE");
             $table->timestamps();
         });

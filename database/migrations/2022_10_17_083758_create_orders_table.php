@@ -19,18 +19,11 @@ return new class extends Migration
                     ->constrained('customers', 'customerId')->onDelete('cascade');
             $table->foreignId("orderDeliveryId")
                     ->constrained('deliveries', 'deliveryId')->onDelete('cascade');
-            $table->foreignId("orderProductId")
-                    ->constrained('products', 'productId');
-            $table->string("orderDeliveryAddress")->nullable();
-            $table->string("orderEmail")->nullable();
-            $table->string("orderFirstName")->nullable();
-            $table->string("orderLastName")->nullable();
-            $table->string("orderPhone")->nullable();
-            $table->string("orderState")->nullable();
-            $table->string("orderProducts")->nullable();
-            $table->string("orderTotalPrice")->nullable();
-            $table->string("orderSubTotalPrice")->nullable();
-            $table->string("orderStatus")->default("ACTIVE");
+            $table->decimal("orderTotalAmount")->default(0);
+            $table->string("orderReference")->nullable();
+            $table->string("orderPaymentMethod")->nullable();
+            $table->decimal("orderSubTotalAmount")->default(0);
+            $table->string("orderStatus")->default("Active");
             $table->timestamps();
         });
     }

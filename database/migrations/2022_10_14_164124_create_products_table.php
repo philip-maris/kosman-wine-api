@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id("productId");
             $table->string("productName")->nullable();
-            $table->float("productSellingPrice")->default(0);
-            $table->float("productOfferPrice")->default(0);
+            $table->decimal("productSellingPrice")->default(0);
+            $table->decimal("productOfferPrice")->default(0);
             $table->string("productImage")->nullable();
             $table->longText("productDescription")->nullable();
-            $table->string("productDiscount")->nullable();
+            $table->integer("productDiscount")->default(0);
             //todo foreign key for brands
             $table->foreignId("productBrandId")
                 ->constrained('brands', 'brandId')
@@ -31,12 +31,9 @@ return new class extends Migration
                 ->constrained('categories', 'categoryId')
                 ->onDelete('cascade');
 
-            //todo foreign key for productVariation
-//            $table->foreignId("productVariationId")
-//                ->constrained('product_variations', 'productVariationId')
-//                ->onDelete('cascade');
-            $table->string("productQuantity")->nullable();
-            $table->string("productStatus")->default("ACTIVE");
+
+            $table->integer("productQuantity")->default(0);
+            $table->string("productStatus")->default("Active");
             $table->timestamps();
         });
     }

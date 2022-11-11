@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('brands', function (Blueprint $table) {
-            $table->id("brandId");
-            $table->string("brandName")->nullable();
-            $table->string("brandStatus")->default("Active");
+        Schema::create('banner_types', function (Blueprint $table) {
+            $table->id("bannerTypeId");
+            $table->foreignId("bannerTypeId")
+                    ->constrained("banners", "bannerId");
+            $table->string("bannerTypeName")->nullable();
+            $table->string("bannerTypeStatus")->default("Active");
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brands');
+        Schema::dropIfExists('banner_types');
     }
 };

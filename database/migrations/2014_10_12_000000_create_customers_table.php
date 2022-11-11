@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id("customerId");
             $table->string('customerFirstName')->nullable();
-            $table->string('customerLastName');
+            $table->string('customerLastName')->nullable();
             $table->string('customerEmail')->unique()->nullable();
             $table->string('customerPhoneNo')->nullable();
             $table->string('customerAddress')->nullable();
@@ -24,9 +24,9 @@ return new class extends Migration
             $table->string('customerPassword')->nullable();
             $table->string('customerOtp')->nullable();
             $table->timestamp('customerOtpExpired')->nullable();
-            $table->string('customerStatus')->default("PENDING");
-            $table->string('isAdmin')->nullable();
-            $table->string('isSuperAdmin')->nullable();
+            $table->string('customerStatus')->default("Pending");
+            $table->integer('isAdmin')->default(0);
+            $table->integer('isSuperAdmin')->default(0);
             $table->timestamps();
         });
     }

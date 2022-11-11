@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('deliveries', function (Blueprint $table) {
             $table->id("deliveryId");
             $table->string("deliveryState")->nullable();
-            $table->string("deliveryMinFee")->nullable();
-            $table->string("deliveryMaxFee")->nullable();
+            $table->decimal("deliveryMinFee")->nullable();
+            $table->decimal("deliveryMaxFee")->nullable();
             $table->longText("deliveryDescription")->nullable();
             $table->string("deliveryStatus")->default("ACTIVE");
             $table->timestamps();

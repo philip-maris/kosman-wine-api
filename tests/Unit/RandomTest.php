@@ -1,7 +1,7 @@
 <?php
 namespace Tests\Unit;
 
-use App\Util\baseUtil\RandomUtil;
+use App\Util\BaseUtil\RandomUtil;
 use Exception;
 use Tests\TestCase;
 

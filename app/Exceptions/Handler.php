@@ -2,7 +2,7 @@
 
 namespace App\Exceptions;
 
-use App\Util\baseUtil\ResponseUtil;
+use App\Util\BaseUtil\ResponseUtil;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 

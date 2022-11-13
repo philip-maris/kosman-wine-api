@@ -14,15 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('order_items', function (Blueprint $table) {
-            $table->id("orderItemsId");
-            $table->foreignId("orderItemsOrderId")
+            $table->id("orderItemId");
+            $table->foreignId("orderItemOrderId")
                     ->constrained("orders", "orderId")
                     ->onDelete("cascade");
-            $table->foreignId("orderItemsProductId")
+            $table->foreignId("orderItemProductId")
                     ->constrained("products", "productId");
-            $table->string("orderItemsQuantity")->default("0");
-            $table->decimal("orderItemsTotalAmount")->default(0);
-            $table->string("orderItemsStatus")->default("Active");
+            $table->string("orderItemQuantity")->default("0");
+            $table->decimal("orderItemTotalAmount")->default(0);
+            $table->string("orderItemStatus")->default("Active");
             $table->timestamps();
         });
     }

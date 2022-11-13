@@ -1,6 +1,6 @@
 <?php
 
-use App\Util\baseUtil\DateTimeUtil;
+use App\Util\BaseUtil\DateTimeUtil;
 use Tests\TestCase;
 
 class DateTimeTest extends TestCase

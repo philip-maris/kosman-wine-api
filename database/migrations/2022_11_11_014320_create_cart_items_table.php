@@ -14,16 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cart_items', function (Blueprint $table) {
-            $table->id("cartItemsId");
-            $table->foreignId("cartItemsCartId")
+            $table->id("cartItemId");
+            $table->foreignId("cartItemCartId")
                 ->constrained("carts", "cartId")
                 ->onDelete("cascade");
-            $table->foreignId("cartItemsProductId")
+            $table->foreignId("cartItemProductId")
                     ->constrained("products", "productId")
                     ->onDelete("cascade");
-            $table->string("cartItemsQuantity")->default("0");
-            $table->decimal("cartItemsTotalAmount")->default(0);
-            $table->string("cartItemsStatus")->default("Active");
+            $table->string("cartItemQuantity")->default("0");
+            $table->decimal("cartItemTotalAmount")->default(0);
+            $table->string("cartItemStatus")->default("Active");
             $table->timestamps();
         });
     }

@@ -14,18 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cart_summaries', function (Blueprint $table) {
-            $table->id("cartSummariesId");
-            $table->string("cartSummariesVat")->nullable();
-            $table->float("cartSummariesDeliveryFee")->nullable();
-            $table->string("cartSummariesSubtotalAmount")->nullable();
-            $table->string("cartSummariesTotalAmount")->nullable();
-            $table->foreignId("cartSummariesCartId")
+            $table->id("cartSummaryId");
+            $table->string("cartSummaryVat")->nullable();
+            $table->float("cartSummaryDeliveryFee")->nullable();
+            $table->string("cartSummarySubtotalAmount")->nullable();
+            $table->string("cartSummaryTotalAmount")->nullable();
+            $table->foreignId("cartSummaryCartId")
                     ->constrained("carts", "cartId")
                     ->onDelete('cascade');
-            $table->foreignId("cartSummariesCartItemsId")
-                    ->constrained("cart_items", "cartItemsId")
+            $table->foreignId("cartSummaryCartItemId")
+                    ->constrained("cart_items", "cartItemId")
                     ->onDelete('cascade');
-            $table->string("cartSummariesStatus")->default("Active");
+            $table->string("cartSummaryStatus")->default("Active");
             $table->timestamps();
         });
     }

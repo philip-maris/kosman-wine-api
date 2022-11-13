@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('banner_types', function (Blueprint $table) {
             $table->id("bannerTypeId");
-            $table->foreignId("bannerTypeId")
+            $table->foreignId("bannerTypeBannerId")
                     ->constrained("banners", "bannerId");
             $table->string("bannerTypeName")->nullable();
             $table->string("bannerTypeStatus")->default("Active");

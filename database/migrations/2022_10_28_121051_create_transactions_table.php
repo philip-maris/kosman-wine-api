@@ -17,11 +17,10 @@ return new class extends Migration
             $table->id('transactionId');
             $table->foreignId('transactionCustomerId')
                 ->constrained('customers', 'customerId');
-            $table->foreignId('orderId')
+            $table->foreignId('transactionOrderId')
                 ->constrained('orders', 'orderId');
             $table->string('transactionAmount')->nullable();
             $table->string('transactionReference')->nullable();
-            $table->string('transactionPaymentSystemId')->nullable();
             $table->string('transactionPaymentMethod')->nullable();
             $table->string('transactionStatus')->default("ACTIVE");
             $table->timestamps();

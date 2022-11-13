@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\AdminsController;
-use App\Http\Controllers\TestEmailController;
+use App\Http\Controllers\V1\AdminsController;
+use App\Http\Controllers\V1\TestEmailController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 

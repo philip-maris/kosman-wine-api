@@ -14,17 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('order_details', function (Blueprint $table) {
-            $table->id("orderDetailsId");
-            $table->string("orderDetailsFirstName")->nullable();
-            $table->string("orderDetailsLastName")->nullable();
-            $table->foreignId("orderDetailsOrderId")
+            $table->id("orderDetailId");
+            $table->string("orderDetailFirstName")->nullable();
+            $table->string("orderDetailLastName")->nullable();
+            $table->foreignId("orderDetailOrderId")
                 ->constrained("orders", "orderId")
                 ->onDelete("cascade");
-            $table->string("orderDetailsEmail")->nullable();
-            $table->string("orderDetailsPhone")->nullable();
-            $table->string("orderDetailsAddress")->nullable();
-            $table->string("orderDetailsState")->nullable();
-            $table->string("orderDetailsStatus")->default("Active");
+            $table->string("orderDetailEmail")->nullable();
+            $table->string("orderDetailPhone")->nullable();
+            $table->string("orderDetailAddress")->nullable();
+            $table->string("orderDetailState")->nullable();
+            $table->string("orderDetailStatus")->default("Active");
             $table->timestamps();
         });
     }

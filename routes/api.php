@@ -1,23 +1,23 @@
 <?php
 
-use App\Http\Controllers\AuthenticationsController;
-use App\Http\Controllers\BannerController;
-use App\Http\Controllers\BrandsController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\CategoriesController;
-use App\Http\Controllers\CouponController;
-use App\Http\Controllers\CustomersController;
-use App\Http\Controllers\DeliveryController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\OrderDetailsController;
-use App\Http\Controllers\OrderItemsController;
-use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\ProductVariationController;
-use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\SubscriptionController;
-use App\Http\Controllers\TestimonyController;
-use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\WishlistsController;
+use App\Http\Controllers\V1\AuthenticationsController;
+use App\Http\Controllers\V1\BannerController;
+use App\Http\Controllers\V1\BrandsController;
+use App\Http\Controllers\V1\CartController;
+use App\Http\Controllers\V1\CategoriesController;
+use App\Http\Controllers\V1\CouponController;
+use App\Http\Controllers\V1\CustomersController;
+use App\Http\Controllers\V1\DeliveryController;
+use App\Http\Controllers\V1\OrderController;
+use App\Http\Controllers\V1\OrderDetailsController;
+use App\Http\Controllers\V1\OrderItemsController;
+use App\Http\Controllers\V1\ProductsController;
+use App\Http\Controllers\V1\ProductVariationController;
+use App\Http\Controllers\V1\ReviewController;
+use App\Http\Controllers\V1\SubscriptionController;
+use App\Http\Controllers\V1\TestimonyController;
+use App\Http\Controllers\V1\TransactionController;
+use App\Http\Controllers\V1\WishlistsController;
 use Illuminate\Support\Facades\Route;
 
 /*

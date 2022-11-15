@@ -123,7 +123,7 @@
                     <td>
                         <table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack"
                                role="presentation"
-                               style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f1f3f7; color: #000000; width: 640px;"
+                               style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F6F3F0; color: #000000; width: 640px;"
                                width="640">
                             <tbody>
                             <tr>
@@ -137,8 +137,8 @@
                                             <td>
                                                 <div align="center" style="line-height:10px"><a
                                                         href="https://bizgem.io/index.html" style="outline:none"
-                                                        tabindex="-1" target="_blank"><img alt="bizgem logo"
-                                                                                           src="{{asset('x-asset-x/img/kosmanLogo.svg')}}"
+                                                        tabindex="-1" target="_blank"><img alt="kosman wine logo"
+                                                                                           src="{{asset('x-assets-x/img/kosmanLogo.svg')}}"
                                                                                            style="display: block; height: auto; border: 0; width: 160px; max-width: 100%;"
                                                                                            title="kosman wine logo"
                                                                                            width="160"/></a></div>
@@ -161,7 +161,7 @@
                     <td>
                         <table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack"
                                role="presentation"
-                               style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f1f3f7; color: #000000; width: 640px;"
+                               style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F6F3F0; color: #000000; width: 640px;"
                                width="640">
                             <tbody>
                             <tr>
@@ -189,8 +189,8 @@
                                                 <h1 style="margin: 0; color: #000000; font-size: 13px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; line-height: 120%; text-align: center; direction: ltr; font-weight: 700; letter-spacing: normal; margin-top: 0; margin-bottom: 0;">
                                                     <span class="tinyMce-placeholder">Follow Us on<br/><span
                                                             style="color: #858585;"><a
-                                                                href="https://myquickgem.com/index.html"
-                                                                style="color: #6e696e;"><strong>www.Bizgem.io</strong></a></span></span>
+                                                             href="https://myquickgem.com/index.html"
+                                                                style="color: #6e696e;"><strong>www.kosman.com</strong></a></span></span>
                                                 </h1>
                                             </td>
                                         </tr>
@@ -292,7 +292,7 @@
                     <td>
                         <table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack"
                                role="presentation"
-                               style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f1f3f7; color: #000000; width: 640px;"
+                               style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F6F3F0; color: #000000; width: 640px;"
                                width="640">
                             <tbody>
                             <tr>

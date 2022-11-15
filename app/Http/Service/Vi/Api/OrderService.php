@@ -9,6 +9,7 @@ use App\Mail\OrderSuccessfulMail;
 use App\Models\V1\Customer;
 use App\Models\V1\Delivery;
 use App\Models\V1\Order;
+use App\Models\V1\OrderDetail;
 use App\Util\BaseUtil\IdVerificationUtil;
 use App\Util\BaseUtil\NotificationUtil;
 use App\Util\BaseUtil\ResponseUtil;
@@ -50,7 +51,23 @@ class OrderService
                 "{$customer['customerFirstName']} " ." {$customer['customerLastName']} just placed an order",
                 'GREEN',$customer->id,'NEW ORDER'
             );
-            return $this->SUCCESS_RESPONSE("CREATED SUCCESSFUL");
+
+            // create order details
+            $orderDetail = OrderDetail::create([
+                'orderDetailFirstName'=>$customer['customerFirstName'],
+                'orderDetailLastName'=>$customer['customerLastName'],
+                'orderDetailOrderId'=>$order['orderId'],
+                'orderDetailEmail'=>$customer['customerEmail'],
+                'orderDetailPhone'=>$customer['customerPhone'],
+                'orderDetailAddress'=>$customer['customerAddress'],
+                'orderDetailState'=>$customer['customerState'],
+            ]);
+            //  check if successful
+            if (!$orderDetail) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_CREATE);
+
+            $data[] = array_merge($order->toArray(),
+                ['orderDetail' => $orderDetail->toArray()]);
+            return $this->BASE_RESPONSE($data);
         }catch (Exception $ex){
             return $this->ERROR_RESPONSE($ex->getMessage());
         }
@@ -91,6 +108,8 @@ class OrderService
             $order = Order::all();
             if (!$order)  throw new ExceptionUtil(ExceptionCase::NOT_SUCCESSFUL);
             return $this->BASE_RESPONSE($order);
+
+            //loop through all orders and add order details
         }catch (Exception $ex){
             return $this->ERROR_RESPONSE($ex->getMessage());
         }
@@ -106,7 +125,13 @@ class OrderService
             //todo action
             $order = Order::where('orderId', $request['orderId'])->first();
             if (!$order) throw new ExceptionUtil(ExceptionCase::UNABLE_TO_LOCATE_RECORD);
-            return  $this->BASE_RESPONSE($order);
+
+            $orderDetail = OrderDetail::where('orderDetailOrderId',$request['orderId']);
+            if (!$orderDetail)  throw new ExceptionUtil(ExceptionCase::NOT_SUCCESSFUL);
+
+            $data[] = array_merge($order->toArray(),
+                ['orderDetail' => $orderDetail->toArray()]);
+            return $this->BASE_RESPONSE($data);
         }catch (Exception $ex){
             return $this->ERROR_RESPONSE($ex->getMessage());
         }

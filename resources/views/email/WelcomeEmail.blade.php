@@ -8,7 +8,7 @@
             <td>
                 <table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack"
                        role="presentation"
-                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f1f3f7; background-position: center top; color: #000000; width: 640px;"
+                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F6F3F0; background-position: center top; color: #000000; width: 640px;"
                        width="640">
                     <tbody>
                     <tr>
@@ -23,7 +23,7 @@
                                     <td style="padding-left:30px;padding-right:30px;">
 
                                         <div style="font-family: Tahoma, Verdana, sans-serif">
-                                            <strong>Welcome To Koshman Wines</strong>
+                                            <strong>Welcome To Kosman Wines</strong>
                                             <div class="txtTinyMce-wrapper"
                                                  style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #2b2d49; line-height: 1.2;margin-top:20px ">
                                                 <p style="margin: 0; font-size: 16px; text-align: left; letter-spacing: normal;">
@@ -56,7 +56,7 @@
             <td>
                 <table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack"
                        role="presentation"
-                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f1f3f7; color: #000000; width: 640px;"
+                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F6F3F0; color: #000000; width: 640px;"
                        width="640">
                     <tbody>
                     <tr>

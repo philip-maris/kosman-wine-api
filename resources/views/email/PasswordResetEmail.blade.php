@@ -7,7 +7,7 @@
             <td>
                 <table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack"
                        role="presentation"
-                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f1f3f7; background-position: center top; color: #000000; width: 640px;"
+                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F6F3F0; background-position: center top; color: #000000; width: 640px;"
                        width="640">
                     <tbody>
                     <tr>
@@ -26,9 +26,9 @@
                                             <div class="txtTinyMce-wrapper"
                                                  style="font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #2b2d49; line-height: 1.2;margin-top:20px ">
                                                 <p style="margin: 0; font-size: 16px; text-align: left; letter-spacing: normal;">
-                                                            <span style="font-size:15px;">Dear #customerName<br><br>
-                                                               You have successfully reset your BIZGEM password.<br><br>
-                                                                We'll always let you know when there is any activity on your BizGEM account.This helps keep your account safe.<br><br>
+                                                            <span style="font-size:15px;">Dear {{ucfirst($fullName)}}<br><br>
+                                                               You have successfully reset your password Kosman wine store.<br><br>
+                                                                We'll always let you know when there is any activity on your Kosman account.This helps keep your account safe.<br><br>
                                                             </span>
                                                 </p>
                                                 <p style="margin: 0; font-size: 16px; letter-spacing: normal; mso-line-height-alt: 14.399999999999999px;"></p>
@@ -54,7 +54,7 @@
             <td>
                 <table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack"
                        role="presentation"
-                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f1f3f7; color: #000000; width: 640px;"
+                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F6F3F0; color: #000000; width: 640px;"
                        width="640">
                     <tbody>
                     <tr>

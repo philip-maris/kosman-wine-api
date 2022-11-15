@@ -7,7 +7,7 @@
             <td>
                 <table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack"
                        role="presentation"
-                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f1f3f7; background-position: center top; color: #000000; width: 640px;"
+                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F6F3F0; background-position: center top; color: #000000; width: 640px;"
                        width="640">
                     <tbody>
                     <tr>
@@ -55,7 +55,7 @@
             <td>
                 <table align="center" border="0" cellpadding="0" cellspacing="0" class="row-content stack"
                        role="presentation"
-                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f1f3f7; color: #000000; width: 640px;"
+                       style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #F6F3F0; color: #000000; width: 640px;"
                        width="640">
                     <tbody>
                     <tr>

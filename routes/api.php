@@ -109,14 +109,6 @@ Route::prefix('v1')->group(function (){
         Route::post('/read-order-items-by-order-id', 'readByOrderId');
     });
 
-    //todo orderDetails route
-    Route::controller(OrderDetailsController::class)->group(function (){
-        Route::get('/read-order-details', 'read');
-        Route::post('/create-order-details', 'create');
-        Route::post('/read-order-details-by-id', 'readById');
-        Route::post('/read-order-details-by-order-id', 'readById');
-    });
-
     //todo cart route
     Route::controller(CartController::class)->group(function (){
         Route::post('/create-cart', 'create');
